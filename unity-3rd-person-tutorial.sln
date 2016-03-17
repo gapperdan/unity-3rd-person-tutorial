@@ -1,14 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{ACF690C1-9F2C-8E45-0613-A3938DB57BA6}") = "unity-3rd-person-tutorial", "Assembly-CSharp.csproj", "{3C56DED1-7087-D3DE-818F-C621B4A47E5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{3C56DED1-7087-D3DE-818F-C621B4A47E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C56DED1-7087-D3DE-818F-C621B4A47E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C56DED1-7087-D3DE-818F-C621B4A47E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C56DED1-7087-D3DE-818F-C621B4A47E5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
