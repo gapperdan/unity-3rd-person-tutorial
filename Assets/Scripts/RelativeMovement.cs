@@ -15,9 +15,12 @@ public class RelativeMovement : MonoBehaviour {
 	private float _vertSpeed;
 	private ControllerColliderHit _contact;
 
+	private Animator _animator;
+
 	void Start() {
 		_charController = GetComponent<CharacterController>();
 		_vertSpeed = minFall;
+		_animator = GetComponent<Animator>();
 	}
 
 	void Update() {
@@ -59,17 +62,23 @@ public class RelativeMovement : MonoBehaviour {
 			float check = (_charController.height + _charController.radius) / 1.9f;
 			hitGround = hit.distance <= check;
 		}
+			
+		_animator.SetFloat("Speed", movement.sqrMagnitude);
 
 		if (hitGround) {
 			if (Input.GetButtonDown("Jump")) {
 				_vertSpeed = jumpSpeed;
 			} else {
 				_vertSpeed = minFall;
+				_animator.SetBool("Jumping", false);
 			}
 		} else {
 			_vertSpeed += gravity * 5 * Time.deltaTime;
 			if (_vertSpeed < terminalVelocity) {
 				_vertSpeed = terminalVelocity;
+			}
+			if (_contact != null ) {
+				_animator.SetBool("Jumping", true);
 			}
 			if (_charController.isGrounded) {
 				if (Vector3.Dot(movement, _contact.normal) < 0) {
